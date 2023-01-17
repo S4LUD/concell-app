@@ -1,20 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+"use strict";
 
-export default function App() {
+import { NavigationContainer } from "@react-navigation/native";
+import { ConcellProvider } from "./src/context/Context";
+import MiniApp from "./MiniApp";
+import "react-native-gesture-handler";
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ConcellProvider>
+      <NavigationContainer>
+        <MiniApp />
+      </NavigationContainer>
+    </ConcellProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
